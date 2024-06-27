@@ -7,10 +7,7 @@ class Carro @Inject constructor(
     val combustivel: Combustivel,
     val motor: Motor,
 ){
-
     fun ligarCarro(){
         motor.ligarMotor(combustivel)
     }
-
-
 }
