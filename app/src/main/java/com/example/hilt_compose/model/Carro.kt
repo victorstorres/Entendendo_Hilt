@@ -1,4 +1,16 @@
 package com.example.hilt_compose.model
 
-class Carro {
+import javax.inject.Inject
+
+
+class Carro @Inject constructor(
+    val combustivel: Combustivel,
+    val motor: Motor,
+){
+
+    fun ligarCarro(){
+        motor.ligarMotor(combustivel)
+    }
+
+
 }

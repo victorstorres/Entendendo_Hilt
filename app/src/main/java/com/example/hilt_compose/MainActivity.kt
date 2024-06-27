@@ -11,11 +11,26 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.hilt_compose.model.Carro
+import com.example.hilt_compose.model.Combustivel
+import com.example.hilt_compose.model.Motor
 import com.example.hilt_compose.ui.theme.Hilt_ComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var carro: Carro
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        carro.ligarCarro()
+
+
         enableEdgeToEdge()
         setContent {
             Hilt_ComposeTheme {

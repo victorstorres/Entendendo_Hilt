@@ -1,5 +1,7 @@
 package com.example.hilt_compose.model
 
-data class Combustivel(
+import javax.inject.Inject
+
+data class Combustivel @Inject constructor(
     val combustivel: String
 )
